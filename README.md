@@ -2,9 +2,14 @@
 
 ## 1. Introduction
 
-In this project, we will develop an interpreter for a subset of the Scheme language. As we proceed, we think about the issues that arise in the design of a programming language; many quirks of languages are byproducts of implementation decisions in interpreters and compilers.
+![](images/scheme_preview.gif)
 
-We will also implement some small programs in Scheme. Scheme is a simple but powerful functional language. Since we only include a subset of the language, our interpreter will not exactly match the behaviour of other interpreters such as [STk].
+Here we have an interpreter for the Scheme language, written entirely in Python. The central tenet of its design comes down to the concept of a Read-Evaluate-Print loop.
+
+- **Read**: In this stage, the interpreter accepts a Scheme expression as input and proceeds to parse it into an equivalent Python representation (in this case, an instance of the <code>Pair</code> class).
+- **Eval**: Short for 'Evaluate', this stage of the process takes the Python representation of the input expression and evaluates it in order to obtain values.
+
+- **Print**: The final stage, where the string representation of the obtained value is printed out.
 
 ## 2. Core Concepts
 
@@ -200,7 +205,7 @@ scm> (list x y)
 
 #### **mu**
 
-A `mu` expression is similar to a `lambda` expression.
+A `mu` expression is similar to a `lambda` expression, except that the new frame's parent is the frame in which the mu is called, not the frame in which it was created.
 
 ```lisp
 scm> (define f (mu (x) (+ x y)))
