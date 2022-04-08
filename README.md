@@ -133,7 +133,7 @@ okay
 
 #### **and**
 
-The logical forms `and` and `or` are short-circuiting. For `and`, the interpreter should evaluate each sub-expression from left to right, and if any of these evaluates to a false value, then `False` is returned. Otherwise, it should return the value of the last sub-expression. If there are no sub-expressions in an `and` expression, it evaluates to `True`.
+The logical forms `and` is short-circuiting. For `and`, the interpreter evaluates each sub-expression from left to right, and if any of these evaluates to a false value, then `False` is returned. Otherwise, it should return the value of the last sub-expression. If there are no sub-expressions in an `and` expression, it evaluates to `True`.
 
 ```lisp
 scm> (and)
@@ -148,7 +148,7 @@ False
 
 #### **or**
 
-For `or`, evaluate each sub-expression from left to right. If any sub-expression evaluates to a true value, return that value. Otherwise, return `False`. If there are no sub-expressions in an `or` expression, it evaluates to `False`.
+For `or`, evaluate each sub-expression from left to right. If any sub-expression evaluates to a true value, it returns that value. Otherwise, it returns `False`. If there are no sub-expressions in an `or` expression, it evaluates to `False`. This one is also a short-circuting form.
 
 ```lisp
 scm> (or)
